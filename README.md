@@ -29,4 +29,5 @@ Join me on this incredible journey with [CipherShare](https://cipher-share.verce
 ![Files Collection](https://github.com/HarshPrajapati2003/CipherShare/assets/114976762/2a760293-947c-4aaf-8415-15d4c643afb7)
 ![Upgrade page](https://github.com/HarshPrajapati2003/CipherShare/assets/114976762/492d4ddc-04db-4a20-90aa-7d5d6301d67e)
 
+<<<<<<< Updated upstream
 **#CipherShare #FileSharing #TechInnovation #NextJS #Clerk #TailwindCSS #Firebase #LaunchDay #TechStack #WebDevelopment #InnovationInProgress** 🔗🚀
