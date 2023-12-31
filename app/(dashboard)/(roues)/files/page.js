@@ -48,7 +48,7 @@ function Files() {
 
   return (
     <>
-      <div class="mx-auto max-w-3xl text-center my-9">
+      {(file.length>0) ? (<><div class="mx-auto max-w-3xl text-center my-9">
         <h2 class="text-3xl font-bold text-primary sm:text-4xl">
           Your Uploaded Files
         </h2>
@@ -62,7 +62,9 @@ function Files() {
         setFile={setFile}
         setRender={setRender}
         render={render}
-      />
+      /></>):<p class="mt-4 text-gray-500 sm:text-xl">
+          No files are Uploaded yet
+        </p>}
     </>
   );
 }

@@ -54,21 +54,25 @@ function Header() {
             </nav>
 
             <div className="flex items-center gap-4">
-             {user ?<UserButton/>:<div className="sm:flex sm:gap-4">
-                <a
-                  className="block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-700"
-                  href="/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2Ffiles"
-                >
-                  Sign In
-                </a>
+              {user ? (
+                <UserButton />
+              ) : (
+                <div className="sm:flex sm:gap-4">
+                  <a
+                    className="block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-700"
+                    href={`${process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}`}
+                  >
+                    Sign In
+                  </a>
 
-                <a
-                  className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-primary transition hover:text-blue-600/75 sm:block"
-                  href="/sign-up?redirect_url=http%3A%2F%2Flocalhost%3A3000%2Ffiles"
-                >
-                  Register
-                </a>
-              </div>}
+                  <a
+                    className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-primary transition hover:text-blue-600/75 sm:block"
+                    href={`${process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL}`}
+                  >
+                    Register
+                  </a>
+                </div>
+              )}
 
               {/* <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
                 <span className="sr-only">Toggle menu</span>
