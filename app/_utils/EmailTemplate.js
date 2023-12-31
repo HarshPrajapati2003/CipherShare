@@ -341,9 +341,8 @@ export const EmailTemplate = (
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td style="padding: 0 2.5em; text-align: center; padding-bottom: 3em;">
-                                    <div class="text">
-                                        <h2>${userEmail}</h2>
-                                        <h2>${userName} Shared this file with You</h2>
+                                    <div class="text"> 
+                                        <h2>${userName} (${userEmail}) Shared this file with You</h2>
                                     </div>
                                 </td>
                             </tr>
