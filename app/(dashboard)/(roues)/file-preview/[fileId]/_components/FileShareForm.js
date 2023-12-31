@@ -39,7 +39,7 @@ function FileShareForm({ file, onPasswordSave }) {
             email: email,
           }
         );
-
+          console.log("res.data.message : ",res.data.message);
         if (res.status == 200) {
           toast.success("Mail Sent");
         } else {
