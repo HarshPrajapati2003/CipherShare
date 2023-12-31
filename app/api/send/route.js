@@ -58,6 +58,7 @@ export const POST = async (req) => {
   } catch (err) {
     console.error(err);
     // Return an error response
+    console.error("Error sending email:", err);
     return NextResponse.json(
       { message: "Sorry, mail was not sent", error: err },
       { status: 500 }
