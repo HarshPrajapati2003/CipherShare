@@ -4,8 +4,8 @@ export const EmailTemplate = (
   fileType,
   userName,
   shortUrl,
-  email
-) => 
+  userEmail
+) =>
   `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
     xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -342,7 +342,8 @@ export const EmailTemplate = (
                             <tr>
                                 <td style="padding: 0 2.5em; text-align: center; padding-bottom: 3em;">
                                     <div class="text">
-                                        <h2>${userName} Shared this file with You ${email}</h2>
+                                        <h2>${userEmail}</h2>
+                                        <h2>${userName} Shared this file with You</h2>
                                     </div>
                                 </td>
                             </tr>
@@ -352,9 +353,15 @@ export const EmailTemplate = (
                                         <img src="https://firebasestorage.googleapis.com/v0/b/first-project-11055.appspot.com/o/file-upload%2Ffile-gif.gif?alt=media&token=51f9daa6-7e46-4eb7-af15-1aa1e4bab37d" alt=""
                                             style="width: 200px; max-width: 600px; height: auto; margin: auto; display: block;">
                                         <h3 class="name">File Name : ${fileName}</h3>
-                                        <span class="position"> 📑 ${fileType} ⚡ ${(fileSize/1024/1024).toFixed(2)}MB</span>
+                                        <span class="position"> 📑 ${fileType} ⚡ ${(
+    fileSize /
+    1024 /
+    1024
+  ).toFixed(2)}MB</span>
                                         <p><a href=${shortUrl} class="btn btn-primary">Open File</a></p>
-                                        <p><a href=${process.env.NEXT_PUBLIC_BASE_URL} class="btn-custom">Visit Website</a></p>
+                                        <p><a href=${
+                                          process.env.NEXT_PUBLIC_BASE_URL
+                                        } class="btn-custom">Visit Website</a></p>
                                     </div>
                                 </td>
                             </tr>
@@ -367,7 +374,9 @@ export const EmailTemplate = (
                 style="margin: auto;">
                 <tr>
                     <td class="bg_light" style="text-align: center;">
-                        <p>No longer want to receive these email? You can <a href=${process.env.NEXT_PUBLIC_BASE_URL}
+                        <p>No longer want to receive these email? You can <a href=${
+                          process.env.NEXT_PUBLIC_BASE_URL
+                        }
                                 style="color: rgba(0,0,0,.8);">Unsubscribe here</a></p>
                     </td>
                 </tr>

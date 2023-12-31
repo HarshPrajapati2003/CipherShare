@@ -48,23 +48,29 @@ function Files() {
 
   return (
     <>
-      {(file.length>0) ? (<><div class="mx-auto max-w-3xl text-center my-9">
-        <h2 class="text-3xl font-bold text-primary sm:text-4xl">
-          Your Uploaded Files
-        </h2>
-        <p class="mt-4 text-gray-500 sm:text-xl">
-          Total No. of Files : {file.length}
-        </p>
-      </div>
+      {file.length > 0 ? (
+        <>
+          <div class="mx-auto max-w-3xl text-center my-9">
+            <h2 class="text-3xl font-bold text-primary sm:text-4xl">
+              Your Uploaded Files
+            </h2>
+            <p class="mt-4 text-gray-500 sm:text-xl">
+              Total No. of Files : {file.length}
+            </p>
+          </div>
 
-      <Table
-        file={file}
-        setFile={setFile}
-        setRender={setRender}
-        render={render}
-      /></>):<p class="mt-4 text-gray-500 sm:text-xl">
-          No files are Uploaded yet
-        </p>}
+          <Table
+            file={file}
+            setFile={setFile}
+            setRender={setRender}
+            render={render}
+          />
+        </>
+      ) : (
+        <div class="mx-auto max-w-3xl text-center my-9">
+          <p class="mt-4 text-gray-500 sm:text-xl">No files are Uploaded yet</p>
+        </div>
+      )}
     </>
   );
 }

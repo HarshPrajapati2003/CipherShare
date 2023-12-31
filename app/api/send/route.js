@@ -32,7 +32,7 @@ export const POST = async (req) => {
         fileType,
         userName,
         shortUrl,
-        email
+        userEmail
       ),
     };
 
