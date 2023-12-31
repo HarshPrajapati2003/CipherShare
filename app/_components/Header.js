@@ -1,7 +1,11 @@
+"use client"
 import Image from 'next/image';
 import React from 'react'
+import { UserButton, useUser } from "@clerk/nextjs";
 
 function Header() {
+  const {user} = useUser()
+  console.log(user)
   return (
     <div>
       <header className="bg-white">
@@ -50,7 +54,7 @@ function Header() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4">
+             {user ?<UserButton/>:<div className="sm:flex sm:gap-4">
                 <a
                   className="block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-700"
                   href="/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2Ffiles"
@@ -64,7 +68,7 @@ function Header() {
                 >
                   Register
                 </a>
-              </div>
+              </div>}
 
               {/* <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
                 <span className="sr-only">Toggle menu</span>
