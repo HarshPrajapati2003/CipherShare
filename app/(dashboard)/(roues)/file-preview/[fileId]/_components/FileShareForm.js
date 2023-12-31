@@ -27,15 +27,18 @@ function FileShareForm({ file, onPasswordSave }) {
     e.preventDefault()
     if (email) {
       try {
-        const res = await axios.post("/api/send", {
-          fileName: file.fileName,
-          fileSize: file.fileSize,
-          fileType: file.fileType,
-          userEmail: file.userEmail,
-          userName: file.userName,
-          shortUrl: file.shortUrl,
-          email: email,
-        });
+        const res = await axios.post(
+          "https://cipher-share.vercel.app/api/send",
+          {
+            fileName: file.fileName,
+            fileSize: file.fileSize,
+            fileType: file.fileType,
+            userEmail: file.userEmail,
+            userName: file.userName,
+            shortUrl: file.shortUrl,
+            email: email,
+          }
+        );
 
         if (res.status == 200) {
           toast.success("Mail Sent");
